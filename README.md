@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Introduction
+AppSpace aims to be the easiest way to buy or sell your applications on the web. Built an amazing application? List it on AppSpace. AppSpace connects buyers with developers (sellers) through an effortless and dynamic progress to ensure your work is sold for its true value.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Website:
+https://appstore-coderacademy.herokuapp.com/
