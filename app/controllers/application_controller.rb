@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  def hello
+  def welcome
     render html: "App Store Coming Soon!"
   end
 end
