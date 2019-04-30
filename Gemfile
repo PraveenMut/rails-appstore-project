@@ -18,6 +18,14 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+
+# Use jQuery Rails
+gem 'jquery-rails', '4.3.1'
+# Use bootstrap
+gem 'bootstrap', '~> 4.3.1'
+# Use faker to generate fake seeds
+gem 'faker', '~> 1.9'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -60,3 +68,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Use Stripe for charging
+gem 'stripe'
+
+# Use Dot Env
+gem 'dotenv-rails', groups: [:development, :test]
+
+# Use Devise and CanCan for Authentication and Authorisation
+gem 'devise'
+gem 'cancancan'
