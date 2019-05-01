@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'application#welcome'
 
     # product routing
-    root 'apps#index'
     get '/apps', to: 'apps#index', as: 'apps'
     post '/apps', to: 'apps#create'
     get '/apps/new', to: 'apps#new', as: 'new_app'

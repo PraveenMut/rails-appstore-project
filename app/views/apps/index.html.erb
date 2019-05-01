@@ -1,2 +1,13 @@
 <h1>App Library</h1>
-<p>Find me in app/views/apps/index.html.erb</p>
+<% @apps.each do |app| %>
+<div>
+<ul>
+<li><%= app.name %></li>
+<li><%= app.description %></li>
+<li><%= app.price %></li>
+<li><%= app.store.name %></li>
+<li> <%= link_to 'Show Listing', app_path(app.id) %> </li>
+<li> <%= link_to 'Edit Listing', edit_app_path(app.id) %></li>
+</ul>
+<% end %>
+</div>
