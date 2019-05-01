@@ -7,7 +7,7 @@
 <li><%= app.price %></li>
 <li><%= app.store.name %></li>
 <li> <%= link_to 'Show Listing', app_path(app.id) %> </li>
-<% if can? :update, app %>
+<% if app.store.user == current_user %>
 <li> <%= link_to 'Edit Listing', edit_app_path(app.id) %></li>
 <% end %>
 </ul>

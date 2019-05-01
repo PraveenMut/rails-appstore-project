@@ -6,4 +6,5 @@ class User < ApplicationRecord
   
   has_many :orders
   has_one :store
+  has_one :user_profile
 end
