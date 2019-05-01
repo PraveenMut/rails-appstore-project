@@ -1,2 +1,25 @@
-<h1>Edit Your App</h1>
-<p>Find me in app/views/apps/edit.html.erb</p>
+<div class="container-column">
+  <div class="image-container">
+    <img src="assets/images/placeholder.png" />
+  </div>
+  <div class="main-header">
+    <h1><%= @app.name %> - <span>by <%= @app.store.name %></span></h1>
+    <h2><%= @app.description %></h2>
+    <h2><%= @app.price %></h2>
+    <%= link_to 'Get App', new_order_path %>
+  </div>
+</div>
+<div class="container">
+  <p><%= @app.description %></p>
+</div>
+<div class="container-column">
+  <div class="image-container">
+    <img src="assets/images/placeholder.png">
+  </div>
+  <div class="image-container">
+    <img src="assets/images/placeholder.png">
+  </div>
+  <div class="image-container">
+    <img src="assets/images/placeholder.png">
+  </div>
+</div>
