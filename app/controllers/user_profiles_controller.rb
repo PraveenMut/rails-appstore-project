@@ -1,4 +1,6 @@
 class UserProfilesController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @user_profile = UserProfile.new
   end
@@ -10,9 +12,6 @@ class UserProfilesController < ApplicationController
   end
 
   def edit
-  end
-
-  def delete
   end
 
   private

@@ -1,4 +1,6 @@
 class AppsController < ApplicationController
+  before_action :authenticate_user!, except: :index
+
   def index
     @apps = App.all
   end
