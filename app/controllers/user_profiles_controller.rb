@@ -2,11 +2,15 @@ class UserProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @check_user_profile = UserProfile.find(params[:id])
+    if @check_user_profile == current_user
+      redirect_to edit_user_user_profile_path
+    end
     @user_profile = UserProfile.new
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @user_profile = UserProfile.new(user_profile_params)
     @user_profile.user_id = @user.id
     if @user_profile.save
@@ -22,8 +26,6 @@ class UserProfilesController < ApplicationController
 
   def edit
     @user_profile = UserProfile.find(params[:id])
-    @user_profile.update(user_profile_params)
-    redirect_to apps_path
   end
 
   private
