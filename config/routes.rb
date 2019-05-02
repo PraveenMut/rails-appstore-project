@@ -15,17 +15,13 @@ Rails.application.routes.draw do
     post '/apps/:id/orders', to: 'orders#create'
     get '/apps/:id/orders/:id', to: 'orders#show', as: 'order'
 
-    ## store routing
-    get '/users/:id/stores/:id', to: 'stores#show', as: 'store'
-    get '/users/:id/stores/new', to: 'stores#new', as: 'new_store'
-    post '/users/:id/stores', to: 'stores#create'
+    ## user profile and stores routing
+    resources :users do
+      resources :user_profiles
+      resources :stores
+    end
 
-    ## user profile routing
-    get '/users/:id/user_profile/:id', to: 'user_profiles#show', as: 'user_profile'
-    get '/users/:id/user_profile/new', to: 'user_profiles#new', as: 'new_user_profile'
-    post '/users/:id/user_profile', to: 'user_profiles#create'
-    get '/users/:id/user_profile/:id/edit', to: 'user_profiles#edit', as: 'edit_user_profile'
-    put '/users/:id/user_profile/:id', to: 'user_profile#update'
+    
 
     ## devise routes  
   devise_for :users
