@@ -82,3 +82,5 @@ gem 'dotenv-rails', groups: [:development, :test]
 # Use Devise and CanCan for Authentication and Authorisation
 gem 'devise'
 gem 'cancancan'
+
+gem 'prawn-icon', '~> 2.3'
