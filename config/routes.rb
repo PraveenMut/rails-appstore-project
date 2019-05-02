@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     delete '/apps/:id', to: 'apps#delete'
     
     ## order routing
-    get '/apps/:id/orders/new', to: 'orders#new', as: 'new_order'
-    post '/apps/:id/orders', to: 'orders#create'
-    get '/apps/:id/orders/:id', to: 'orders#show', as: 'order'
+    get '/apps/:apps_id/orders/new', to: 'orders#new', as: 'new_order'
+    post '/apps/:apps_id/orders', to: 'orders#create'
+    get '/apps/:apps_id/orders/:id', to: 'orders#show', as: 'order'
 
         ## devise routes  
     devise_for :users

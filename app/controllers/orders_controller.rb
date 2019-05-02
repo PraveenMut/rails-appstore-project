@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
       currency: 'aud',
     })
     if @order.save
-      redirect_to apps_path
+      redirect_to order_path
     else
       @order.errors
       render 'new'
