@@ -1,0 +1,10 @@
+<h1>Your User Profile</h1>
+<h3>Current Billing Details</h3>
+<div>
+<p><%= @user_profile.first_name %> <%= @user_profile.last_name %></p>
+<p><%= @user_profile.street %></p>
+<p><%= @user_profile.suburb %>, <%= @user_profile.state %>, <%= @user_profile.postcode %> </p>
+<p><%= @user_profile.country %></p>
+<%= link_to 'Edit Profile',  edit_user_user_profile_path %>
+</div>
+

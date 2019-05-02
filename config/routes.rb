@@ -15,15 +15,13 @@ Rails.application.routes.draw do
     post '/apps/:id/orders', to: 'orders#create'
     get '/apps/:id/orders/:id', to: 'orders#show', as: 'order'
 
+        ## devise routes  
+    devise_for :users
+
     ## user profile and stores routing
     resources :users do
       resources :user_profiles
       resources :stores
     end
-
-    
-
-    ## devise routes  
-  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
