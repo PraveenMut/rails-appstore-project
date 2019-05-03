@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     
     ## order routing
     get '/apps/:apps_id/orders/new', to: 'orders#new', as: 'new_order'
+    get '/apps/:apps_id/orders', to: 'orders#index', as: 'orders'
     post '/apps/:apps_id/orders', to: 'orders#create'
     get '/apps/:apps_id/orders/:id', to: 'orders#show', as: 'order'
 
