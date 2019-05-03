@@ -1,36 +1,27 @@
+<h4>Register a Store</h4>
 
-<head>
-<div class="jumbotron text-center">
-  <h1>Welcome to the App Space</h1>
-</div>
-    <title>Register a Store</title>
-</head>
-<body>
-<h4>Register a Store</h4>     
-<form>
+<div class="container">
+  <form action="<%= user_stores_path %>" method="POST">
+    <input type="hidden" value="<%= form_authenticity_token %>" name= "authenticity_token" />
     <label for="name">Store Name</label>
     <input type="text" id="name" placeholder="Store name..">
-
-      <select>
-        <option value="0">Select Genre:</option>
-        <option value="1">Book</option>
-        <option value="2">Business</option>
-        <option value="3">Education</option>
-        <option value="4">Entertainment</option>
-        <option value="5">Finance</option>
-        <option value="6">Food & Drink</option>
-        <option value="7">Games</option>
-        <option value="8">Health</option>
-        <option value="9">Magazines</option>
-        <option value="10">Music</option>
-        <option value="11">News</option>
-        <option value="12">Sports</option>
-      </select>
-                
-    <input type="submit" value="Register">
-</form>
+    <select name="genre">
+      <option value="selectgenre" disabled="disabled">Select Genre:</option>
+      <option value="Book">Book</option>
+      <option value="Business">Business</option>
+      <option value="Education">Education</option>
+      <option value="Entertainment">Entertainment</option>
+      <option value="Finance">Finance</option>
+      <option value="Food">Food & Drink</option>
+      <option value="Games">Games</option>
+      <option value="Health">Health</option>
+      <option value="Magazines">Magazines</option>
+      <option value="Music">Music</option>
+      <option value="News">News</option>
+      <option value="Sports">Sports</option>
+    </select>
+    <input type="submit" value="Create" />
+  </form>
+</div>
 <div class="footer">
 </div>
-</body>
-
-</html>

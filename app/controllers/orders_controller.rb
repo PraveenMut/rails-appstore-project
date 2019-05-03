@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def new
-    @app = App.find(params[:id])
+    @app = App.find(params[:apps_id])
     @order = Order.new
     @order.user_id = current_user.id
     @order.order_price = (@app.price*100).to_i
@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
       currency: 'aud',
     })
     if @order.save
-      redirect_to apps_path
+      redirect_to order_path
     else
       @order.errors
       render 'new'
