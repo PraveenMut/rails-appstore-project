@@ -6,7 +6,7 @@
     <h1><%= @app.name %> <span>by <%= @app.store.name %></span></h1>
     <h2><%= @app.description %></h2>
     <h2><%= number_to_currency(@app.price) %></h2>
-    <%= link_to 'Get App', new_order_path %>
+    <%= link_to 'Get App', new_order_path(@app.id) %>
   </div>
 </div>
 <div class="container">

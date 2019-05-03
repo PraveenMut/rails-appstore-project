@@ -2,10 +2,11 @@ class UserProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @check_user_profile = UserProfile.find(params[:id])
-    if @check_user_profile == current_user
-      redirect_to edit_user_user_profile_path
-    end
+    # @check_user_profile = UserProfile.find(params[:id])
+    # if @check_user_profile == current_user
+    #   redirect_to edit_user_user_profile_path
+    # end
+    redirect_to edit_user_user_profile_path(current_user.id, current_user.user_profile.id) if current_user.user_profile.present?
     @user_profile = UserProfile.new
   end
 
