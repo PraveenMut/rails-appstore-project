@@ -7,13 +7,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @app = App.find(params[:id])
+    @app = App.find(params[:apps_id])
     @amount = (@app.price*100).to_i
     user = current_user.id
     @order = Order.new({:user_id=>user,:order_price=>@amount})
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
-      source: params[:stripeToken],
+      source: params[:stripeToken]
     })
   
     charge = Stripe::Charge.create({
@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
       currency: 'aud',
     })
     if @order.save
-      redirect_to order_path
+      redirect_to order_path(@app.id, @order.id)
     else
       @order.errors
       render 'new'
