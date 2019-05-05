@@ -2,8 +2,8 @@
 
 # Links
 
-Website: https://appstore-coderacademy.herokuapp.com/
-Git Repository link: https://github.com/PraveenMut/rails-appstore-project/
+<p>Website: https://appstore-coderacademy.herokuapp.com/</p>
+<p>Git Repository link: https://github.com/PraveenMut/rails-appstore-project/</p>
 
 # Abstract of the Program and what it is trying to solve:
 
