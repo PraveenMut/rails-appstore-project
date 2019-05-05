@@ -14,12 +14,8 @@
 </div>
 <div class="container-column">
   <div class="image-container">
-    <img src="https://semantic-ui.com/images/wireframe/image.png" width="64" />
-  </div>
-  <div class="image-container">
-    <img src="https://semantic-ui.com/images/wireframe/image.png" width="64" />
-  </div>
-  <div class="image-container">
-    <img src="https://semantic-ui.com/images/wireframe/image.png" width="64" />
+    <% @app.images.each do |image| %>
+      <%= image_tag image %>
+    <% end %>
   </div>
 </div>

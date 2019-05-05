@@ -12,7 +12,7 @@ class AppsController < ApplicationController
 
   def create
     @app = App.new(app_params)
-    @app.store_id = current_user.store.store_id
+    @app.store_id = current_user.store.id
     if @app.save
       redirect_to app_path(@app.id)
     else
@@ -43,7 +43,7 @@ end
   private
 
   def app_params
-    params.permit(:name, :description, :price, :blurb, images: [])
+    params.require(:app).permit(:name, :description, :price, :blurb, :icon, images: [])
   end
 
   def check_if_user_has_profile
@@ -55,4 +55,3 @@ end
   end
 
 end
-
