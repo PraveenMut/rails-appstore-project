@@ -1,5 +1,6 @@
 class AppsController < ApplicationController
   before_action :authenticate_user!, except: :index
+  before_action :check_if_user_has_profile
 
   def index
     @apps = App.all
@@ -7,6 +8,16 @@ class AppsController < ApplicationController
 
   def new
     @app = App.new
+  end
+
+  def create
+    @app = App.new(app_params)
+    @app.store_id = current_user.store.store_id
+    if @app.save
+      redirect_to app_path(@app.id)
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -32,7 +43,15 @@ end
   private
 
   def app_params
-    params.permit(:name, :description, :price)
+    params.permit(:name, :description, :price, :blurb, images: [])
+  end
+
+  def check_if_user_has_profile
+    if user_signed_in?
+      unless current_user.user_profile.present?
+        redirect_to new_user_user_profile_path(current_user.id)
+      end
+    end
   end
 
 end
