@@ -1,5 +1,10 @@
 # README
 
+# Links
+
+Website: https://appstore-coderacademy.herokuapp.com/
+Git Repository link: https://github.com/PraveenMut/rails-appstore-project/
+
 # Abstract of the Program and what it is trying to solve:
 
 AppSpace aims to be the premier marketplace for independent developers to list their apps for sale and for buyers, being app consumers (a B2C structure) to seamlessly purchase applications.  Built an amazing application? List it on AppSpace.
@@ -117,7 +122,3 @@ We aim to introduce the TDD (Test Driven Development) with automated testing usi
 AppSpace takes data confidentiality extremely seriously. We do not sell or monetize data to 3rd parties whatsoever. In addition, due to the MVC architecture of Rails, confidential data is abstracted away from the client side and moved to server side for full SSR. This ensures that sensitive user profile information is absent from the client side which substantially reduces vulnerabilities. 
 
 Of course, this reduces the attack vector to the server itself. In order to defend against such attacks, all passwords and sensitive billing details (such as credit card details) are fully encrpted by salted bcrypt and SSL/TLS when communicating with Stripe. Therefore, if information were to be leaked through an attack on the server, all information is fully encrypted and requires the private keys that are only accessible through cracking Heroku's security (an improbable case).
-
-
-# Website:
-https://appstore-coderacademy.herokuapp.com/
