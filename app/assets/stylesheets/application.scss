@@ -15,8 +15,10 @@
  */
  @import "bootstrap";
 
- body {
-  background: '..images/home.jpg' no-repeat center center fixed;
-  background-size: cover;
-  -o-background-size: cover;
+i {
+  font-size: 40pt;
+}
+
+.nav-link-bigger {
+ font-size: 18pt;
 }
