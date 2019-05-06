@@ -1,21 +1,26 @@
+    <div class="jumbotron text-center">
+      <h1>Welcome to the App Space</h1>
+    </div>
+    
     <div class="container">
       <h1>Add Your Profile</h1>
       <p>Please add your personal details to begin ordering</p>
       <hr>
       <form action="<%= user_user_profiles_path %>" method="POST">
         <input type="hidden" value="<%= form_authenticity_token %>" name= "authenticity_token" />
-        <label for="name"><b>First Name</b></label>
-        <input type="text" placeholder="First name.." name="first_name" required>
-        <label for="last_name"><b>Last name</b></label>
-        <input type="text" placeholder="Last name.." name="last_name" required>
-        <label for="street"><b>Street</b></label>
-        <input type="text" placeholder="Street.." name="street" required>
-        <label for="suburb"><b>Suburb</b></label>
-        <input type="text" placeholder="Suburb.." name="suburb" required>
-        <label for="postcode"><b>Postcode</b></label>
-        <input type="integer" placeholder="Postcode.." name="postcode" required>
+        <p><label for="name"><b>First Name</b></label>
+        <input type="text" placeholder="First name.." name="first_name" required></p>
+        <p><label for="last_name"><b>Last name</b></label>
+        <input type="text" placeholder="Last name.." name="last_name" required></p>
+        <p><label for="street"><b>Street</b></label>
+        <input type="text" placeholder="Street.." name="street" required></p>
+        <p><label for="suburb"><b>Suburb</b></label>
+        <input type="text" placeholder="Suburb.." name="suburb" required></p>
+        <p><label for="postcode"><b>Postcode</b></label>
+        <input type="integer" placeholder="Postcode.." name="postcode" required></p>
+        <p><label for="genre">Select State:</label>
         <select name="state">
-          <option value="selectgenre" disabled="disabled">Select State:</option>
+          <option value="selectstate" disabled="disabled">Select State:</option>
           <option value="New South Wales">New South Wales</option>
           <option value="Northern Territory">Northern Territory</option>
           <option value="Queensland">Queensland</option>
@@ -23,7 +28,14 @@
           <option value="Tasmania">Tasmania</option>
           <option value="Victoria">Victoria</option>
           <option value="Western Australia">Western Australia</option>
-        </select>
+          </select></p>
+          <p><label for="country"><b>Country</b></label>
+          <input type="text" placeholder="<%= @user_profile.country %>" name="country" required></p>
+        
         <input type="submit" value="Create" />
-      </form>
+        </form>
+        <div class="container signin">
+          <p>Already have an account? <a href="#">Sign in</a>.</p>
+        </div>
+      
     </div>
