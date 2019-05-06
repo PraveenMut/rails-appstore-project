@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'application#welcome'
+  root 'welcome#index'
 
     ## product routing
   
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     post '/apps/:apps_id/orders', to: 'orders#create'
     get '/apps/:apps_id/orders/:id', to: 'orders#show', as: 'order'
 
-    ## devise routes  
+    ## devise routing  
     devise_for :users, :controllers => {registrations: 'registrations'}
 
     ## user profile and stores routing
