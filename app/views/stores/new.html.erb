@@ -4,7 +4,7 @@
   <form action="<%= user_stores_path %>" method="POST">
     <input type="hidden" value="<%= form_authenticity_token %>" name= "authenticity_token" />
     <label for="name">Store Name</label>
-    <input type="text" id="name" placeholder="Store name..">
+    <input type="text" name="name" placeholder="Store name..">
     <select name="genre">
       <option value="selectgenre" disabled="disabled">Select Genre:</option>
       <option value="Book">Book</option>
