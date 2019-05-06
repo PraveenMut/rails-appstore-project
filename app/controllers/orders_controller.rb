@@ -31,5 +31,9 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @app = App.find(params[:apps_id])
+    @order = Order.find(params[:id])
+    @user_profile = @order.user.user_profile
+    @generated_download_link = "http://www.appspace.com/" + Faker::File.file_name()
   end
 end

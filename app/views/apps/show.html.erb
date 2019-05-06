@@ -1,6 +1,8 @@
 <div class="container-column">
   <div class="image-container">
-      <img src="https://semantic-ui.com/images/wireframe/image.png" width="64" />
+    <% if @app.icon.attached? %>
+      <%= image_tag @app.icon %>
+    <% end %>
   </div>
   <div class="main-header">
     <h1><%= @app.name %> <span>by <%= @app.store.name %></span></h1>
@@ -18,4 +20,8 @@
       <%= image_tag image %>
     <% end %>
   </div>
+  <div class="container">
+    <% if @app.store.user == current_user %>
+    <%= link_to 'Delete Listing', app_path(@app.id), :method => :delete, :class => "btn btn-outline-danger" %>
+    <% end %>
 </div>
