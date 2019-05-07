@@ -1,4 +1,5 @@
 <h1>Edit a Listing</h1>
+<div class="container">
 <%= form_for @app, url: {action: "update"} do |f| %>
   <div class="form-group">
     <%= f.label :name %>
@@ -22,6 +23,8 @@
   </div>
   <div class="form-group">
     <%= f.submit 'Edit Listing', class:'btn btn-outline-success' %>
+    <%= link_to 'Delete', app_path(@app.id), :method => :delete, :class => "btn btn-outline-danger", :data => { confirm: "Are you sure?" } %>
   </div>
 <% end %>
+  </div>
 </div>

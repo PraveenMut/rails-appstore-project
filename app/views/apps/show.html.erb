@@ -1,7 +1,7 @@
 <div class="container-column">
   <div class="image-container">
     <% if @app.icon.attached? %>
-      <%= image_tag @app.icon.service_url %>
+      <%= image_tag @app.icon %>
     <% end %>
   </div>
   <div class="main-header">
@@ -17,11 +17,12 @@
 <div class="container-column">
   <div class="image-container">
     <% @app.images.each do |image| %>
-      <%= image_tag image.service_url %>
+      <%= image_tag image %>
     <% end %>
   </div>
   <div class="container">
     <% if @app.store.user == current_user %>
-    <%= link_to 'Delete Listing', app_path(@app.id), :method => :delete, :class => "btn btn-outline-danger" %>
+    <%= link_to 'Edit Listing', edit_app_path(@app.id), :class => "btn btn-outline-success" %>
+    <%= link_to 'Delete Listing', app_path(@app.id), :method => :delete, :class => "btn btn-outline-danger", :data => { confirm: "Are you sure?" } %>
     <% end %>
 </div>
