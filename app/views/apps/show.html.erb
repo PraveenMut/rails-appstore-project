@@ -1,7 +1,7 @@
 <div class="container-column">
   <div class="image-container">
     <% if @app.icon.attached? %>
-      <%= image_tag @app.icon %>
+      <%= image_tag @app.icon.service_url %>
     <% end %>
   </div>
   <div class="main-header">
@@ -17,7 +17,7 @@
 <div class="container-column">
   <div class="image-container">
     <% @app.images.each do |image| %>
-      <%= image_tag image %>
+      <%= image_tag image.service_url %>
     <% end %>
   </div>
   <div class="container">
