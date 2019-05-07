@@ -21,10 +21,11 @@ puts "Creating Applications"
 
 10.times do
   name = Faker::App.name
+  blurb = Faker::Lorem.sentence(1)
   description = Faker::Lorem.sentence(3)
-  store_id = [12,13].sample
+  store_id = [1,2].sample
   price = rand(1..10) + rand().round(2)
-  @created_app = App.create({:name=>name, :description=>description, :store_id=>store_id, :price=>price})
+  @created_app = App.create({:name=>name, :blurb=>blurb, :description=>description, :store_id=>store_id, :price=>price})
   p @created_app.name
 end
 
