@@ -1,5 +1,7 @@
-<h2>Log in</h2>
-
+<div class="login-container">
+<div class="form-signin">
+<i class="fab fa-app-store"></i>
+<h2>Please log in</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -19,7 +21,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "btn btn-lg btn-primary" %>
   </div>
 <% end %>
 

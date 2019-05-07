@@ -1,3 +1,23 @@
-// Place all the styles related to the apps controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.card-deck .card {
+  min-width: 220px;
+}
+
+.card-deck .card {
+    display: flex;
+    flex: 100%;
+    flex-direction: column;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.card {
+  position: relative;
+  // display: flex;
+  // flex-direction: column;
+  // min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}

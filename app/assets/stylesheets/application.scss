@@ -17,8 +17,23 @@
 
 i {
   font-size: 40pt;
+  color: #007bff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.html {
+  font-family: sans-serif;
+  line-height: 1.15;
+}
+
+.sr-only {
+  color: #007bff;
 }
 
 .nav-link-bigger {
- font-size: 18pt;
+ font-size: 16pt;
 }

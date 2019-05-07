@@ -1,17 +1,22 @@
 
 @import "bootstrap";
 
+.bg-image {
+  height: 100vh;
+  background-size: contain;
+  background-image: image_url('home.jpg'); 
+}
+
+.text {
+  padding-top: 10%;
+  margin-left: 15%;
+  text-align: left!important
+}
+
 .cover-heading {
   color: azure;
 }
 
 .lead {
   color: azure;
-}
-
-body {
-  background-image: image_url('home.jpg'); 
-  background-size: 80% auto;
-  
-  align-items: center;
 }
