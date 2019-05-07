@@ -30,6 +30,7 @@ class AppsController < ApplicationController
 
   def update
     @app = App.find(params[:id])
+    @app.images.attach(app_params[:images])
     @app.update(app_params)
     redirect_to app_path(@app.id)
 end
