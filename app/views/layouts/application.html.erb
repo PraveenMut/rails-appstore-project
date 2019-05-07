@@ -47,36 +47,7 @@
           </li>
           </div>
     </nav>
-   <!-- <div class="container">
-    <div class="navbar">
-    <ul class="nav navbar-nav">
-      <li><%= link_to 'Home', apps_path %></li>
-    </ul>
-    <ul class="nav navbar-nav pull-right">
-      <% if user_signed_in? %>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu" role="menu">
-            <% if current_user.user_profile.present? %>
-              <li><%= link_to 'My Profile', user_user_profile_path(current_user.id, current_user.user_profile.id)%></li>
-            <% end %>
-            <li><%= link_to 'Account Settings', edit_user_registration_path %></li>
-            <% unless current_user.store.present? %>
-            <li><%= link_to 'Become a Seller!', new_user_store_path(current_user.id) %></li>
-            <% else %>
-            <li><%= link_to 'Create a Listing', new_app_path %></li>
-            <% end %>
-            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-          </ul>
-        </li>
-      <% else %>
-        <li><%= link_to 'Log In', new_user_session_path %></li>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-      <% end %>
-    </ul>
-  </div> -->
+  
 
   <% flash.each do |key, value| %>
     <%= value %>

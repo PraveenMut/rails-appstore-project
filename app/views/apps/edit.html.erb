@@ -7,7 +7,7 @@
   </div>
   <div class="form-group">
     <%= f.label :Short_Description %>
-    <%= f.text_field :blurb, class: 'form-control' %>
+    <%= f.text_field :blurb, maxlength: 60, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :price %>
@@ -22,8 +22,8 @@
     <%= f.file_field :images, multiple: true, class: 'form-control-file' %>
   </div>
   <div class="form-group">
-    <%= f.submit 'Edit Listing', class:'btn btn-outline-success' %>
-    <%= link_to 'Delete', app_path(@app.id), :method => :delete, :class => "btn btn-outline-danger", :data => { confirm: "Are you sure?" } %>
+    <%= f.submit 'Save', class:'btn btn-primary' %>
+    <%= link_to 'Delete', app_path(@app.id), :method => :delete, :class => "btn btn-primary", :data => { confirm: "Are you sure?" } %>
   </div>
 <% end %>
   </div>
