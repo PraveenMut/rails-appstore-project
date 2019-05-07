@@ -29,9 +29,16 @@ class UserProfilesController < ApplicationController
     @user_profile = UserProfile.find(params[:id])
   end
 
+  def update
+    @user = current_user
+    @user_profile = UserProfile.find(params[:id])
+    @user_profile.update(user_profile_params)
+    redirect_to user_user_profile_path(@user.id, @user_profile.id)
+  end
+
   private
 
   def user_profile_params
-    params.permit(:first_name, :last_name, :street, :suburb, :postcode, :state, :country)
+    params.require(:user_profile).permit(:first_name, :last_name, :street, :suburb, :postcode, :state, :country)
   end
 end

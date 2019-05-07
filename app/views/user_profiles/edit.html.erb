@@ -1,0 +1,35 @@
+<h1>Edit Your Billing Details</h1>
+<%= form_for @user_profile, url: {action: "update"} do |f| %>
+  <div class="form-group">
+    <%= f.label :First_Name %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Last_Name %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Street %>
+    <%= f.text_field :street, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :Suburb %>
+    <%= f.text_field :suburb, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Postcode %>
+    <%= f.text_field :postcode, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :State %>
+    <%= f.text_field :state, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Country %>
+    <%= f.text_field :country, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'Edit Details', class:'btn btn-outline-success' %>
+  </div>
+<% end %>
+</div>

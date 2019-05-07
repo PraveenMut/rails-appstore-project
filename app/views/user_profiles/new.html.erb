@@ -5,16 +5,16 @@
       <form action="<%= user_user_profiles_path %>" method="POST">
         <input type="hidden" value="<%= form_authenticity_token %>" name= "authenticity_token" />
         <label for="name"><b>First Name</b></label>
-        <input type="text" placeholder="First name.." name="first_name" required>
+        <input type="text" placeholder="First name.." name="first_name" required="required">
         <label for="last_name"><b>Last name</b></label>
-        <input type="text" placeholder="Last name.." name="last_name" required>
+        <input type="text" placeholder="Last name.." name="last_name" required="required">
         <label for="street"><b>Street</b></label>
-        <input type="text" placeholder="Street.." name="street" required>
+        <input type="text" placeholder="Street.." name="street" required="required">
         <label for="suburb"><b>Suburb</b></label>
-        <input type="text" placeholder="Suburb.." name="suburb" required>
+        <input type="text" placeholder="Suburb.." name="suburb" required="required">
         <label for="postcode"><b>Postcode</b></label>
-        <input type="integer" placeholder="Postcode.." name="postcode" required>
-        <select name="state">
+        <input type="integer" placeholder="Postcode.." name="postcode" required="required">
+        <select name="state" required="required">
           <option value="selectgenre" disabled="disabled">Select State:</option>
           <option value="New South Wales">New South Wales</option>
           <option value="Northern Territory">Northern Territory</option>
