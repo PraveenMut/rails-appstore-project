@@ -1,59 +1,35 @@
-<form action="<%= edit_user_path(params[:id]) %>" method="POST" >
-    <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" />
-
-    <input type="hidden" name="_method" value="patch" />
-    <% if @user_profile.errors.any? %>
-    <div id="error_explanation">
-        <h2>
-        <%= pluralize(@user_profile.errors.count, "error") %> prohibited
-        this article from being saved:
-        </h2>
-        <ul>
-        <% @user_profile.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-        </ul>
-    </div>
-    <% end %>
-    
-    <div class="jumbotron text-center">
-    <h1>Welcome to the App Space</h1>
+<h1>Edit Your Billing Details</h1>
+<%= form_for @user_profile, url: {action: "update"} do |f| %>
+  <div class="form-group">
+    <%= f.label :First_Name %>
+    <%= f.text_field :first_name, class: 'form-control' %>
   </div>
-  
-  <form action="action_page.php">
-    <div class="container">
-      <h1>Update Your Profile</h1>
-      <p>Please update your personal details</p>
-      <hr>
-  
-      <label for="first_name"><b>First name</b></label>
-      <input type="text" placeholder="First name.." name="first_name" required>
-      
-      <label for="last_name"><b>Last name</b></label>
-      <input type="text" placeholder="Last name.." name="last_name" required>
-  
-      <label for="street"><b>Street</b></label>
-      <input type="text" placeholder="Street.." name="street" required>
-  
-      <label for="suburb"><b>Suburb</b></label>
-      <input type="text" placeholder="Suburb.." name="suburb" required>
-  
-      <label for="postcode"><b>Postcode</b></label>
-      <input type="integer" placeholder="Postcode.." name="postcode" required>
-  
-      <div class="form-group">
-        <label for="sel1">Select State:</label>
-          <select class="form-control" id="sel1">
-            <option>New South Wales</option>
-            <option>Northern Territory</option>
-            <option>Queensland</option>
-            <option>South Australia</option>
-            <option>Tasmania</option>
-            <option>Victoria</option>
-            <option>Western Australia</option>
-          </select>
-      </div>
-  </form>
-
-    <input type="submit" value="Update" />
-</form>
+  <div class="form-group">
+    <%= f.label :Last_Name %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Street %>
+    <%= f.text_field :street, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :Suburb %>
+    <%= f.text_field :suburb, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Postcode %>
+    <%= f.text_field :postcode, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :State %>
+    <%= f.text_field :state, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Country %>
+    <%= f.text_field :country, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'Edit Details', class:'btn btn-outline-success' %>
+  </div>
+<% end %>
+</div>

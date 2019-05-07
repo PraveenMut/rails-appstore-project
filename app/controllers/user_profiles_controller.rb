@@ -12,7 +12,7 @@ class UserProfilesController < ApplicationController
 
   def create
     @user = current_user
-    @user_profile = UserProfile.new(user_profile_params)
+    @user_profile = UserProfile.new(vanilla_user_profile_params)
     @user_profile.user_id = @user.id
     if @user_profile.save
       redirect_to apps_path
@@ -29,9 +29,20 @@ class UserProfilesController < ApplicationController
     @user_profile = UserProfile.find(params[:id])
   end
 
+  def update
+    @user = current_user
+    @user_profile = UserProfile.find(params[:id])
+    @user_profile.update(user_profile_params)
+    redirect_to user_user_profile_path(@user.id, @user_profile.id)
+  end
+
   private
 
   def user_profile_params
+    params.require(:user_profile).permit(:first_name, :last_name, :street, :suburb, :postcode, :state, :country)
+  end
+
+  def vanilla_user_profile_params
     params.permit(:first_name, :last_name, :street, :suburb, :postcode, :state, :country)
   end
 end

@@ -5,6 +5,11 @@
 <p>Website: https://appstore-coderacademy.herokuapp.com/</p>
 <p>Git Repository link: https://github.com/PraveenMut/rails-appstore-project/</p>
 
+# Identify the database to be used in your App and provide a justification for your choice.
+
+PostgreSQL is an Object-Relational Database Management System. It's possible to relate its object orientation to having implemented table inheritance. PostgreSQL can handle a lot of data. It enforces valid JSON which allows you to use the JSON operators and functions that are built in. And Heroku has a postgreSQL hosting service.
+
+
 # Abstract of the Program and what it is trying to solve:
 
 AppSpace aims to be the premier marketplace for independent developers to list their apps for sale and for buyers, being app consumers (a B2C structure) to seamlessly purchase applications.  Built an amazing application? List it on AppSpace.
@@ -71,6 +76,16 @@ class Orders < ApplicationRecord
 end
 ````
 
+
+# Describe the way tasks are allocated and tracked in your project.
+
+We’ve set up a Trello board where we manage our work and check it regularly and allocate accordingly. We use the Trello board to display our work ‘to do’, work that we’re ‘doing’ and work that has been ‘done.
+
+# Discuss how Agile methodology is being implemented in your project.
+
+We do daily stand ups to discuss what we did the previous day, what we’ll be doing today and any difficulties. We use a kanban board, via Trello to visualise our work ‘to do’, work that we’re ‘doing’ and work that has been ‘done'. We've also done some pair programming and showcasing our working prototype for lecturer feedback.
+
+
 # Describe the data structure of similar marketplace apps:
 
 AppSpace aims to premier destination to allow developers to list their independent work and buyers (consumers of the application) to purchase such applications. Therefore, our application aims takes inspiration of sources such as the Shopify App Store, the Google Play Store and the Apple App Store. 
@@ -117,8 +132,17 @@ To test models, we used the traditional manual method of using rails console to 
 
 We aim to introduce the TDD (Test Driven Development) with automated testing using Guard and Factories at a later, more sophisticated stage of the project. 
 
+# Discuss and analyse requirements related to information system security.
+
+We store email addresses, PII (personally identifiable information), so there are security standards that we need to adhere to. And we take credit card payments so we fall under PCI-DSS compliance obligations. 
+
+
 # Discuss methods you will use to protect information and data
 
 AppSpace takes data confidentiality extremely seriously. We do not sell or monetize data to 3rd parties whatsoever. In addition, due to the MVC architecture of Rails, confidential data is abstracted away from the client side and moved to server side for full SSR. This ensures that sensitive user profile information is absent from the client side which substantially reduces vulnerabilities. 
 
 Of course, this reduces the attack vector to the server itself. In order to defend against such attacks, all passwords and sensitive billing details (such as credit card details) are fully encrpted by salted bcrypt and SSL/TLS when communicating with Stripe. Therefore, if information were to be leaked through an attack on the server, all information is fully encrypted and requires the private keys that are only accessible through cracking Heroku's security (an improbable case).
+
+# Research what your legal obligations are in relation to handling user data.
+
+Privacy Act 1988 all businesses and not for profit organisations have responsibilities to manage personal information securely. It regulates the collection, use and handling of personal information about individuals. When an individual requests access to and/or deletion of PII data that we are holding, we are required to respond to that request within 30 days, otherwise we could be in breach of privacy laws and potential fines.

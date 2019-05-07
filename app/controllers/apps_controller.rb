@@ -30,12 +30,13 @@ class AppsController < ApplicationController
 
   def update
     @app = App.find(params[:id])
+    @app.images.attach(app_params[:images])
     @app.update(app_params)
     redirect_to app_path(@app.id)
 end
 
   def delete
-    @app = app.find(params[:id])
+    @app = App.find(params[:id])
     @app.destroy
     redirect_to apps_path
   end

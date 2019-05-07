@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get '/apps/:id', to: 'apps#show', as: 'app'
     get '/apps/:id/edit', to: 'apps#edit', as: 'edit_app'
     put '/apps/:id', to: 'apps#update'
+    patch 'apps/:id', to: 'apps#update'
     delete '/apps/:id', to: 'apps#delete'
     
     ## order routing
@@ -25,5 +26,6 @@ Rails.application.routes.draw do
       resources :user_profiles
       resources :stores
     end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

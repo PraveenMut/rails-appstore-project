@@ -1,1 +1,30 @@
 <h1>Edit a Listing</h1>
+<div class="container">
+<%= form_for @app, url: {action: "update"} do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Short_Description %>
+    <%= f.text_field :blurb, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, class: 'form-control'%>
+  </div>
+  <div class="form-group">
+    <%= f.label :Extended_Description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Any_Additional_Screenshots? %>
+    <%= f.file_field :images, multiple: true, class: 'form-control-file' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'Edit Listing', class:'btn btn-outline-success' %>
+    <%= link_to 'Delete', app_path(@app.id), :method => :delete, :class => "btn btn-outline-danger", :data => { confirm: "Are you sure?" } %>
+  </div>
+<% end %>
+  </div>
+</div>
