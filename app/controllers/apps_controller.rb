@@ -1,6 +1,7 @@
 class AppsController < ApplicationController
   before_action :authenticate_user!, except: :index
   before_action :check_if_user_has_profile
+  before_action :check_if_user_authorized, only: :edit
 
   def index
     @apps = App.all
@@ -50,6 +51,16 @@ end
     if user_signed_in?
       unless current_user.user_profile.present?
         redirect_to new_user_user_profile_path(current_user.id)
+      end
+    end
+  end
+
+  def check_if_user_authorized
+    @app = App.find(params[:id])
+    if user_signed_in?
+      if current_user != @app.store.user
+        flash[:error_not_auth] = "You are not authorized to access this resource"
+        redirect_to apps_path
       end
     end
   end
