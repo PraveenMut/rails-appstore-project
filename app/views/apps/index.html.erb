@@ -4,10 +4,12 @@
     <div class="card-deck mb-3 text-center">
       <% @apps.each do |app| %>
       <div class="card mb-4 shadow-sm">
-        <div class="card-header">
+        <div class="card-header" >
+          <%= image_tag(app.icon, :size =>"80x80") %>
           <h4 class="my-0 font-weight-normal"><%= app.name %> by <%= app.store.name %></h4>
           <div class="card-body">
-            <h3 class="pricing-card-title">$<%= app.price %></h3>
+          
+            <h3 class="pricing-card-title"><%= number_to_currency(app.price) %></h3>
             <ul class="list-unstyled mt-3 mb-4">
               <%= app.blurb %>
             </ul>
