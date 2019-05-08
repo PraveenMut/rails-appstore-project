@@ -1,15 +1,25 @@
 <h1>App Library</h1>
-<% @apps.each do |app| %>
-<div>
-<ul>
-<li><%= app.name %></li>
-<li><%= app.description %></li>
-<li><%= app.price %></li>
-<li><%= app.store.name %></li>
-<li> <%= link_to 'Show Listing', app_path(app.id) %> </li>
-<% if app.store.user == current_user %>
-<li> <%= link_to 'Edit Listing', edit_app_path(app.id) %></li>
-<% end %>
-</ul>
-<% end %>
+
+<div class="app-listing">
+
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+      <% @apps.each do |app| %>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal"><%= app.name %> by <%= app.store.name %></h4>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$<%= app.price %></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <%= app.blurb %>
+            </ul>
+            <% if app.store.user == current_user %>
+            <%= link_to 'More Details', app_path(app.id), :class => "btn btn-lg btn-primary" %>
+            <% end %>
+            </div>
+        </div>
+      </div>
+      <% end %>
+    </div>  
+  </div>
 </div>

@@ -1,10 +1,20 @@
-<h1>Your User Profile</h1>
-<h3>Current Billing Details</h3>
+
+<h1>User Profile</h1>
+<h5>Current Billing Details</h5>
 <div>
-<p><%= @user_profile.first_name %> <%= @user_profile.last_name %></p>
-<p><%= @user_profile.street %></p>
-<p><%= @user_profile.suburb %>, <%= @user_profile.state %>, <%= @user_profile.postcode %> </p>
-<p><%= @user_profile.country %></p>
+<p><label for="name"><b> Name</b></label>
+<input type="text" placeholder="<%= @user_profile.first_name %><%= @user_profile.last_name %>" name="full_name" required></p>
+<p><label for="street"><b>Street</b></label>
+<input type="text" placeholder="<%= @user_profile.street %>" name="street" required></p>
+<p><label for="suburb"><b>Suburb</b></label>
+<input type="text" placeholder="<%= @user_profile.suburb %>" name="suburb" required></p>
+<p><label for="state"><b>State</b></label>
+<input type="text" placeholder="<%= @user_profile.state %>" name="state" required></p>
+<p><label for="postcode"><b>Postcode</b></label>
+<input type="integer" placeholder="<%= @user_profile.postcode %>" name="postcode" required></p>
+<p><label for="country"><b>Country</b></label>
+<input type="text" placeholder="<%= @user_profile.country %>" name="country" required></p>
+
 <%= link_to 'Edit Profile',  edit_user_user_profile_path %>
 </div>
 

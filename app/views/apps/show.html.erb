@@ -11,9 +11,8 @@
     <%= render "layouts/shared/stripe_form" %>
   </div>
 </div>
-<div class="container">
   <p><%= @app.description %></p>
-</div>
+  
 <div class="container-column">
   <div class="image-container">
     <% @app.images.each do |image| %>
@@ -22,7 +21,7 @@
   </div>
   <div class="container">
     <% if @app.store.user == current_user %>
-    <%= link_to 'Edit Listing', edit_app_path(@app.id), :class => "btn btn-outline-success" %>
-    <%= link_to 'Delete Listing', app_path(@app.id), :method => :delete, :class => "btn btn-outline-danger", :data => { confirm: "Are you sure?" } %>
+    <%= link_to 'Edit Listing', edit_app_path(@app.id), :class => "btn btn-lg btn-primary" %>
+    <%= link_to 'Delete Listing', app_path(@app.id), :method => :delete, :class => "btn btn-lg btn-primary", :data => { confirm: "Are you sure?" } %>
     <% end %>
 </div>
