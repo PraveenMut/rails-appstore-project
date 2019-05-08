@@ -16,7 +16,7 @@
 <div class="container-column">
   <div class="image-container">
     <% @app.images.each do |image| %>
-      <%= image_tag image %>
+    <%= image_tag(image, :size =>"180x260") %>
     <% end %>
   </div>
   <div class="container">
