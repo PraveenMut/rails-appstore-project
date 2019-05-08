@@ -1,5 +1,5 @@
+<div class="con-med border border-info rounded p-3">
 <h1>Edit a Listing</h1>
-<div class="container">
 <%= form_for @app, url: {action: "update"} do |f| %>
   <div class="form-group">
     <%= f.label :name %>
@@ -10,7 +10,10 @@
     <%= f.text_field :blurb, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :price %>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">$</div>
+        </div>
     <%= f.text_field :price, class: 'form-control'%>
   </div>
   <div class="form-group">
