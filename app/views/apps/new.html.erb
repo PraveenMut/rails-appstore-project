@@ -1,39 +1,8 @@
-<!-- <h1>Create a Listing</h1>
-<div>
-  <form action="<%= apps_path %>" method="POST" enctype="multipart/form-data">
-    <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token" />
-    <div>
-      <label>Name</label>
-      <input type="text" name="name" />
-    </div>
-    <div>
-      <label>Short Description (Blurb)</label>
-      <input type="text" name="blurb" />
-    </div>
-    <div>
-      <label>Price</label>
-      <input type="text" name="price" />
-    </div>
-    <div>
-      <label>App Icon<label>
-        <input type="file" name="icon">
-      </div>
-      <div>
-        <label>Extended Description</label>
-        <input type="text" name="description">
-      </div>
-      <div>
-      <label>App Screenshots<label>
-        <input type="file" name="images[]" multiple="multiple">
-      </div>
-      <div>
-        <input type="submit" value="Create" />
-      </div>
-    </form>
-  </div> -->
-
-<div class="con-med border border-info rounded p-3">
-<h1 class="text-center mb-4">Create a New App Listing</h1>
+<div class="con-med border border-primary rounded p-3">
+<div class="text-center">
+  <h1 class="text-center mb-4">Create a New App Listing</h1>
+  <hr>
+</div>
 <%= form_for @app, url: {action: "create"} do |f| %>
   <div class="form-group mb-4">
     <%= f.text_field :name, class: 'form-control', placeholder: 'Your App Name' %>
@@ -61,7 +30,7 @@
     <%= f.file_field :images, multiple: true, class: 'form-control-file' %>
   </div>
   <div>
-    <%= f.submit "Submit App", class:'btn btn-outline-success   btn-lg' %>
+    <%= f.submit "Submit App", class:'btn btn-primary' %>
   </div>
 <% end %>
 </div>
