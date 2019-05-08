@@ -83,4 +83,4 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'cancancan'
 
-gem 'prawn-icon', '~> 2.3'
+gem 'image_processing', '~> 1.2'
