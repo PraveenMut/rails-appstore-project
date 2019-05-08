@@ -1,5 +1,8 @@
 <div class="con-med border border-primary rounded p-3">
-<h1 class="text-center mb-4">Create a New App Listing</h1>
+<div class="text-center">
+  <h1 class="text-center mb-4">Create a New App Listing</h1>
+  <hr>
+</div>
 <%= form_for @app, url: {action: "create"} do |f| %>
   <div class="form-group mb-4">
     <%= f.text_field :name, class: 'form-control', placeholder: 'Your App Name' %>
@@ -27,7 +30,7 @@
     <%= f.file_field :images, multiple: true, class: 'form-control-file' %>
   </div>
   <div>
-    <%= f.submit "Submit App", class:'btn btn-outline-success   btn-lg' %>
+    <%= f.submit "Submit App", class:'btn btn-primary' %>
   </div>
 <% end %>
 </div>
