@@ -27,7 +27,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <% if current_user.user_profile.present? %>
-              <p><%= link_to 'My Profile', user_user_profile_path(current_user.id, current_user.user_profile.id)%></p>
+              <p><%= link_to 'My Profile', edit_user_user_profile_path(current_user.id, current_user.user_profile.id)%></p>
               <% end %>
               <p><%= link_to 'Account Settings', edit_user_registration_path %></p>
               <% unless current_user.store.present? %>
