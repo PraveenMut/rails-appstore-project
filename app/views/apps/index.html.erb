@@ -1,6 +1,4 @@
-<h1>App Library</h1>
-
-<div class="app-listing">
+<h1 class="text-center mb-4">App Library</h1>
 
   <div class="container">
     <div class="card-deck mb-3 text-center">
@@ -9,12 +7,12 @@
         <div class="card-header">
           <h4 class="my-0 font-weight-normal"><%= app.name %> by <%= app.store.name %></h4>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">$<%= app.price %></h1>
+            <h3 class="pricing-card-title">$<%= app.price %></h3>
             <ul class="list-unstyled mt-3 mb-4">
               <%= app.blurb %>
             </ul>
             <% if app.store.user == current_user %>
-            <%= link_to 'More Details', app_path(app.id), :class => "btn btn-lg btn-primary" %>
+            <%= link_to 'More Details', app_path(app.id), :class => "btn btn-primary" %>
             <% end %>
             </div>
         </div>
