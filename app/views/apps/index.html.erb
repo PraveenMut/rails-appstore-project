@@ -11,14 +11,12 @@
           <div class="card-body">
             <h1 class="card-title pricing-card-title">$<%= app.price %></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <%= app.description %>
-              <%= link_to 'Show Listing', app_path(app.id) %>
-              <% if app.store.user == current_user %>
-              <%= link_to 'Edit Listing', edit_app_path(app.id) %>
-              <% end %>
+              <%= app.blurb %>
             </ul>
-            <button type="button" class="btn btn-lg btn-primary">More Details</button>
-          </div>
+            <% if app.store.user == current_user %>
+            <%= link_to 'More Details', app_path(app.id), :class => "btn btn-lg btn-primary" %>
+            <% end %>
+            </div>
         </div>
       </div>
       <% end %>
