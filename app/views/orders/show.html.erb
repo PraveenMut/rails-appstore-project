@@ -1,29 +1,23 @@
-  <h1 class="p-4">Thank you for your Order, <%= @user_profile.first_name %>! </h1>
-  <h4 class="p-4">You'll find your order details along with a link to download your application</h4>
-  <h2 class="p-4">Your Order number is: <%= @order.id %></h2>
-  <div class="container bg-light">
-    <div class="row">
-      <div class="col">
-        <p class="text" style="margin-top: 60px;"><%= @app.name %> </p>
-      </div>
-      <div class="col">
-        <p class="text" style="margin-top: 60px;"> <%= number_to_currency(@app.price) %> </p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-      </div>
-      <div class="col">
-        <p class="text"> <%= number_to_currency(@app.price) %> </p>
-       </div>
-      </div>
+<div class="con-med border border-primary rounded p-3">
+  <div class="text-center">
+    <h1 class="text-center mb-4">Thank you for your Order, <%= @user_profile.first_name %>! </h1>
+    <h5>Here is your order details along with a download link</h5>
   </div>
-    <h2>Your Download Link</h2>
-    <div class="card card-med m-4">
-      <div class="card-body">
-        <p class="text"><%= @generated_download_link %> </p>
-      </div>
+  <div class="form-row">
+      <div class="form-group col-md-4">
+      <h5>Order Number
+      <input type="text" placeholder="<%= @order.id %>" class="form-control" disabled="disabled">
+      </h5>
+      <h5>Name
+      <input type="text" placeholder="<%= @app.name %>" class="form-control" disabled="disabled">
+      </h5>
+      <h5>Price
+      <input type="text" placeholder="<%= number_to_currency(@app.price) %>" class="form-control" disabled="disabled">
+      </h5>
+      <div class="form-row">
+      <h2 class="download btn btn-primary btn-float-center">Download</h2>
+    </div>
+  </div>
+    </div>
 </div>
-      </div>
-    </div>
-  </div>
+
