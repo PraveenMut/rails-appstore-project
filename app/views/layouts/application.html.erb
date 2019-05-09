@@ -13,19 +13,22 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="/"><i class="fab fa-app-store"></i></a>
+        <a class="navbar-brand" href="/"><i class="fab fa-app-store fa-2x text-primary"></i></a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link nav-link-bigger" href="<%= apps_path %>">Listings <span class="sr-only">(current)</span></a>
+            <a class="nav-link nav-link-size text-primary" href="<%= apps_path %>">Listings <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link nav-link-size text-primary" href="<%= new_user_store_path(current_user.id) %>">Become a Seller <span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <div class="my-2 my-lg-0">
           <% if user_signed_in? %>
           <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link nav-link-size dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               My Account
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu nav-link-size" >
               <% if current_user.user_profile.present? %>
               <p><%= link_to 'My Profile', edit_user_user_profile_path(current_user.id, current_user.user_profile.id)%></p>
               <% end %>
@@ -38,7 +41,7 @@
               <p><%= link_to 'Log out', destroy_user_session_path, method: :delete %></p>
             <% else %>
             <div class="nav-item active">
-              <a class="btn btn-outline-primary btn-lg" href="<%= new_user_session_path %>">Login <span class="sr-only">(current)</span></a>
+              <a class="btn btn-outline-primary" href="<%= new_user_session_path %>">Login <span class="sr-only">(current)</span></a>
             </div>
             <% end %>
           </li>
