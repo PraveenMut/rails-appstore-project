@@ -6,7 +6,10 @@
   </div>
   <div id="headlines-container">
     <span class="subtitle" style="letter-spacing: 4px;"><%= @app.store.genre %></span>
-    <h1 class="text-hero"><%= @app.name %> <span class="subtitle">by <%= @app.store.name %></span></h1>
+    <h1 class="text-hero"><%= @app.name %> <span class="subtitle">by 
+    <%= link_to(user_store_path(@app.store.user.id, @app.store.id)) do %>
+    <%= @app.store.name %>
+    <% end %></span></h1>
     <h5 class="text-hero"><%= @app.blurb %></h5>
     <h2><%= number_to_currency(@app.price) %></h2>
     <% unless current_user.store.present? %>

@@ -25,6 +25,10 @@
               <%= link_to 'Create A Listing', new_app_path, class: 'nav-link nav-link-size text-primary' %>
             <% end %>
           </li>
+          <li class="nav-item-active">
+            <% if user_signed_in? && current_user.store.present? %>
+              <%= link_to "My Listings", user_store_path(current_user.id, current_user.store.id), class: 'nav-link nav-link-size text-primary' %>
+            <% end %>
         </ul>
         <div class="my-2 my-lg-0">
           <% if user_signed_in? %>
