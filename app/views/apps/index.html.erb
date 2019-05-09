@@ -6,8 +6,10 @@
         <% @apps.each do |app| %>
         <div class="col-md-4 col-6">
           <div class="card mb-4 shadow-sm">
-            <div class="card-header" >
-              <%= image_tag(app.icon, :size =>"80x80") %>
+            <div class="card-header">
+              <% if app.icon.attached? %>
+                <%= image_tag(app.icon, :size =>"80x80") %>
+              <% end %>
             </div>
             <div class="card-body">
               <h4 class="my-0 font-weight-normal"><%= app.name %> by <%= app.store.name %></h4>
