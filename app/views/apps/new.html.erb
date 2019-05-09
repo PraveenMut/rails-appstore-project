@@ -1,36 +1,40 @@
 <div class="con-med border border-primary rounded p-3">
 <div class="text-center">
-  <h1 class="text-center mb-4">Create a New App Listing</h1>
-  <hr>
+  <h1 class="text-center mb-4">Create App Listing</h1>
 </div>
 <%= form_for @app, url: {action: "create"} do |f| %>
   <div class="form-group mb-4">
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Your App Name' %>
+  <b><%= f.label :Name %></b>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name..' %>
   </div>
   <div class="form-group mb-4">
-    <%= f.text_field :blurb, class: 'form-control', placeholder: 'Short Description' %>
+  <b><%= f.label :Short_Description %></b>
+    <%= f.text_field :blurb, class: 'form-control', placeholder: 'Short description..' %>
   </div>
   <div class="form-group mb-4">
+  <b><%= f.label :Price %></b>
   <div class="input-group">
     <div class="input-group-prepend">
-      <div class="input-group-text">$</div>
+    
+      <div class="input-group-text"><b>$</b></div>
     </div>
-      <%= f.text_field :price, class: 'form-control', placeholder: 'Price' %>
+      <%= f.text_field :price, class: 'form-control', placeholder: 'Price..' %>
   </div>
   </div>
   <div class="form-group mb-4">
-    <%= f.label :Your_App_Icon %>
+    <b><%= f.label :Icon %></b>
     <%= f.file_field :icon, class: 'form-control-file' %>
   </div>
   <div class="form-group mb-4">
-    <%= f.text_area :description, class: 'form-control', placeholder: 'Extended Description' %>
+  <b><%= f.label :Extended_Description %></b>
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Extended description..' %>
   </div>
   <div class="form-group mb-4">
-    <%= f.label :App_Screenshots %>
+    <b><%= f.label :Screenshots %></b>
     <%= f.file_field :images, multiple: true, class: 'form-control-file' %>
   </div>
   <div>
-    <%= f.submit "Submit App", class:'btn btn-primary' %>
+    <%= f.submit "Submit", class:'btn btn-primary' %>
   </div>
 <% end %>
 </div>
