@@ -36,6 +36,8 @@ We hope that you enjoy the experience of AppStore and we strive to ensure that e
 - Visual Studio Code (as the team's preferred text editor)
 - Figma (for designing)
 - HTML/CSS/JS/CoffeeScript (for rendering views, in built to Rails)
+- ImageMagik (for Image Resizing)
+- Bootstrap (for rapid production quality websites through modern CSS/jQuery)
 
 # Describe the network infrastructure:
 
@@ -45,11 +47,20 @@ In regards to user uploaded images, AppSpace uses AWS's S3 service. Such images 
 
 # Description of production of database used
 
-The web application employs a traditional relational SQL database using the postgresql (aka postgres) RDBMS (Relational Database Management System). The reason this was used was to comply with Heroku's build systems which require postgres to be used for Rails type applications. Postgres is a battle tested RDBMS and thus makes it a great choice for robust web applications requiring many CRUD IOs.
+The web application employs a traditional relational SQL database using the postgresql (aka postgres) RDBMS (Relational Database Management System). The reason this was used was to comply with Heroku's build systems which require postgres to be used for Rails type applications. Postgres is a thoroughly battle tested RDBMS with a rich open source community and thus makes it a great choice for robust web applications requiring many CRUD IOs.
+
+Although other DBMSes such as SQLite (Relational) and MongoDB/no-SQL are available to use in Ruby, as Heroku is not capable with SQLite and MongoDB requires extensive additional configuration, PostgreSQL was ultimately chosen to be the preferred choice for the production database. 
 
 # An abstract of the different high level components used
 
 The web application is built on Ruby on Rails 5.2.3 which is utilises a MVC/Model-View-Controller type of architecture that allows complex applications to be built efficiently. The MVC architectural pattern is one of the most popular architectural patterns when building dynamic applications that require persistent CRUD operations. It separates the concerns of each function that CRUD applications are based, that is the Views (the contents that is displayed to the user through ActionView), the model (the physical database relations that have been abstracted to models which can be queried by Rails' ORM called ActiveRecord and any logic relating to the model) and the controller (which acts a intermediary between the View, the Model and the client's browser) allowing what to be called, any logic with routing, models to be called and what to pushed to the view.
+
+### The Model
+Ruby on Rails 5.2.3 employs an ORM (Object Relational Mapping) to provide an abstraction between the raw Database and its relevant SQL commmands (which would otherwise require to be inputted as SQL DD instructions). This allows relations and its relevant tuples to be be treated as natural ruby based objects and relevant actions or manipulations to be called to the them. As explained above, ActiveRecord is the class method is the abstracting layer. 
+
+An excellent depiction of the MVC architectural pattern is displayed below illustrating its clear separation of concerns and its full SSR methodology (Server Side Rendered Pages).
+
+< insert image of MVC > 
 
 # Describe the Project's Models
 
