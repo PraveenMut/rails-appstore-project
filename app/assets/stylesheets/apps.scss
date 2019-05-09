@@ -25,3 +25,11 @@
 .desc {
   margin-top: 2%;
 }
+
+.container-center {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}

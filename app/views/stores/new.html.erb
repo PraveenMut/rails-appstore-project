@@ -1,32 +1,40 @@
-<h4>Register a Store</h4>
-
-<div class="container">
-  <form action="<%= user_stores_path %>" method="POST">
-    <input type="hidden" value="<%= form_authenticity_token %>" name= "authenticity_token" />
-    
-    <p><label for="name" required="required"><b>Store Name</b></label>
-    <input type="text" name="name" placeholder="Store name.."></p>
-    
-    <p><label for="genre"><b>Genre</b></label>
-    <select name="genre" required="required">
-      <option value="selectgenre" disabled="disabled">Select Genre:</option>
-      <option value="Book">Book</option>
-      <option value="Business">Business</option>
-      <option value="Education">Education</option>
-      <option value="Entertainment">Entertainment</option>
-      <option value="Productivity">Productivity</option>
-      <option value="Finance">Finance</option>
-      <option value="Food">Food & Drink</option>
-      <option value="Games">Games</option>
-      <option value="Health">Health</option>
-      <option value="Magazines">Magazines</option>
-      <option value="Music">Music</option>
-      <option value="News">News</option>
-      <option value="Sports">Sports</option>
-    </select></p>
-    
-    <input type="submit" value="Create" class:'btn btn-primary'/>
-  </form>
+<div class="container-center">
+    <h2 class="text-center">Register a Store</h2>
+    <div class="con-med border border-primary rounded p-3">
+      <form action="<%= user_stores_path %>" method="POST">
+        <input type="hidden" value="<%= form_authenticity_token %>" name= "authenticity_token" />
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name" required="required"><b>Store Name</b></label>
+            <input type="text" name="name" class="form-control" placeholder="Store name.."></p>
+          </div> 
+          <div class="form-group col-md-6">
+            <label for="genre"><b>Genre</b></label>
+            <select name="genre" class="form-control" required="required">
+              <option value="selectgenre" disabled="disabled">Select Genre:</option>
+              <option value="Book">Book</option>
+              <option value="Business">Business</option>
+              <option value="Education">Education</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Productivity">Productivity</option>
+              <option value="Finance">Finance</option>
+              <option value="Food">Food & Drink</option>
+              <option value="Games">Games</option>
+              <option value="Health">Health</option>
+              <option value="Magazines">Magazines</option>
+              <option value="Music">Music</option>
+              <option value="News">News</option>
+              <option value="Sports">Sports</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <input type="submit" value="Add Store" class="btn btn-secondary btn-lg"/>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 <div class="footer">
+</div>
 </div>
