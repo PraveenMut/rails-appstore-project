@@ -1,4 +1,4 @@
-<h1 class="text-center mb-4">App Library</h1>
+<h1 class="text-center mb-4">App Listings</h1>
 
   <div class="container">
     <div class="row">
@@ -17,9 +17,7 @@
               </ul>
             </div>
             <div class="card-footer">
-              <% if app.store.user == current_user %>
                 <%= link_to 'More Details', app_path(app.id), :class => "btn btn-primary" %>
-              <% end %>
             </div>
           </div>
         </div>

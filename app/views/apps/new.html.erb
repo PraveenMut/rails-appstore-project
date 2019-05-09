@@ -1,11 +1,11 @@
 <div class="con-med border border-primary rounded p-3">
 <div class="text-center">
-  <h1 class="text-center mb-4">Create a New App Listing</h1>
+  <h1 class="text-center mb-4">Create App Listing</h1>
 </div>
 <%= form_for @app, url: {action: "create"} do |f| %>
   <div class="form-group mb-4">
-  <b><%= f.label :App_Name %></b>
-    <%= f.text_field :name, class: 'form-control', placeholder: 'App Name..' %>
+  <b><%= f.label :Name %></b>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Name..' %>
   </div>
   <div class="form-group mb-4">
   <b><%= f.label :Short_Description %></b>
@@ -22,7 +22,7 @@
   </div>
   </div>
   <div class="form-group mb-4">
-    <b><%= f.label :App_Icon %></b>
+    <b><%= f.label :Icon %></b>
     <%= f.file_field :icon, class: 'form-control-file' %>
   </div>
   <div class="form-group mb-4">
@@ -30,11 +30,11 @@
     <%= f.text_area :description, class: 'form-control', placeholder: 'Extended description..' %>
   </div>
   <div class="form-group mb-4">
-    <b><%= f.label :App_Screenshots %></b>
+    <b><%= f.label :Screenshots %></b>
     <%= f.file_field :images, multiple: true, class: 'form-control-file' %>
   </div>
   <div>
-    <%= f.submit "Submit App", class:'btn btn-primary' %>
+    <%= f.submit "Submit", class:'btn btn-primary' %>
   </div>
 <% end %>
 </div>
