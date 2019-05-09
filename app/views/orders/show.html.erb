@@ -1,21 +1,24 @@
-<div class="con-med border border-primary rounded p-3">
-  <div class="text-center">
-    <h1 class="text-center mb-4">Thank you for your Order, <%= @user_profile.first_name %>! </h1>
+<div class="con-med border border-primary rounded p-3 con-med-2">
+  <div class="text-center mb-4">
+    <h1>Thank you for your Order, <%= @user_profile.first_name %>! </h1>
     <h5>Here is your order details along with a download link</h5>
   </div>
-  <div class="form-row">
-      <div class="form-group col-md-4">
-      <h5>Order Number
+      <div class="form-inline col-8 mb-3">
+      <h5 class="form-inline col-4">Order Number</h5>
       <input type="text" placeholder="<%= @order.id %>" class="form-control" disabled="disabled">
-      </h5>
-      <h5>Name
-      <input type="text" placeholder="<%= @app.name %>" class="form-control" disabled="disabled">
-      </h5>
-      <h5>Price
+      </div>
+      <div class="form-inline col-8 mb-3">
+      <h5 class="form-inline col-4">Name</h5>
+      <input type="text" placeholder="<%= @app.name %> by <%= @app.store.name %>" class="form-control" disabled="disabled">
+      </div>
+      <div class="form-inline col-8 mb-3">
+      <h5 class="form-inline col-4">Price</h5>
       <input type="text" placeholder="<%= number_to_currency(@app.price) %>" class="form-control" disabled="disabled">
-      </h5>
-      <div class="form-row">
-      <h2 class="download btn btn-primary btn-float-center">Download</h2>
+      </div>
+      <div class="form-inline col-8">
+      <div class="form-inline col-4">
+      <h5 class="download btn btn-primary">Download</h5>
+    </div>
     </div>
   </div>
     </div>
