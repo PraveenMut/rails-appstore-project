@@ -9,7 +9,7 @@ class StoresController < ApplicationController
     @store = Store.new(store_params)
     @store.user_id = @user.id
     if @store.save
-      redirect_to user_store_path(@user.id, @store.id)
+      redirect_to new_app_path
     else
       render 'new'
     end

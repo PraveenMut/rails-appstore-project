@@ -8,8 +8,9 @@
     <h1><%= @app.name %> <span>by <%= @app.store.name %></span></h1>
     <h2><%= @app.blurb %></h2>
     <h2><%= number_to_currency(@app.price) %></h2>
+    <% unless current_user.store.apps.include?(@app)  %>
     <%= render "layouts/shared/stripe_form" %>
-  
+    <% end %>
    <p class="desc"><%= @app.description %></p>
     </div>
   </div>

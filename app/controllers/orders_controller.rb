@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_if_user_authorized, only: :show
+
   def new
     @app = App.find(params[:apps_id])
     @order = Order.new
@@ -36,4 +39,17 @@ class OrdersController < ApplicationController
     @user_profile = @order.user.user_profile
     @generated_download_link = "http://www.appspace.com/" + Faker::File.file_name()
   end
+
+  private
+
+  def check_if_user_authorized
+    @order = Order.find(params[:id])
+    if user_signed_in?
+      if current_user != @order.user
+        flash[:error_not_auth] = "Sorry, you are not authorized to access this resource"
+        redirect_to apps_path
+      end
+    end
+  end
 end
+
