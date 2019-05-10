@@ -42,7 +42,8 @@
 
 .container-rows {
   display: flex;
-  flex-flow: row;
+  justify-content: center;
+  // flex-flow: row;
   padding: 20px;
   padding-top: 30px;
   margin: 1px;
@@ -63,10 +64,6 @@
 
 .text-hero {
   color: #454f5b;
-}
-
-#headlines-container {
-  width: 60%;
 }
 
 .image-container-top {
