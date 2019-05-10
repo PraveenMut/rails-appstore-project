@@ -14,16 +14,20 @@
  *= require_self
  */
  @import "bootstrap";
-
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+ @import url('https://fonts.googleapis.com/css?family=Merriweather');
 
 body {
   background-color: #f8f9fa;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Merriweather', sans-serif;
 }
 
 .html {
-  font-family: sans-serif;
   line-height: 1.15;
 }
 

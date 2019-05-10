@@ -3,7 +3,11 @@
     <h1 class="cover-heading mb-auto">Welcome to the App Space.</h1>
     <p class="lead">An App Space where you can buy and sell your apps.</p>
     <p class="links">
+    <% unless user_signed_in? %>
     <%= link_to 'Sign Up', new_user_registration_path, :class => "btn btn-lg btn-primary" %>
+    <% else %>
+    <%= link_to 'Browse Applications', apps_path, :class => "btn btn-lg btn-secondary" %>
+    <% end %>
     </p>
   </main>
   </div>

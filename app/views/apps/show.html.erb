@@ -1,12 +1,16 @@
-<div class="container-column">
-  <div class="image-container">
+<div class="container-rows">
+  <div class="image-container-top">
     <% if @app.icon.attached? %>
     <%= image_tag(@app.icon, :size =>"80x80") %>
     <% end %>
   </div>
-  <div class="main-header">
-    <h1><%= @app.name %> <span>by <%= @app.store.name %></span></h1>
-    <h2><%= @app.blurb %></h2>
+  <div id="headlines-container">
+    <span class="subtitle" style="letter-spacing: 4px;"><%= @app.store.genre %></span>
+    <h1 class="text-hero"><%= @app.name %> <span class="subtitle">by 
+    <%= link_to(user_store_path(@app.store.user.id, @app.store.id)) do %>
+    <%= @app.store.name %>
+    <% end %></span></h1>
+    <h5 class="text-hero"><%= @app.blurb %></h5>
     <h2><%= number_to_currency(@app.price) %></h2>
     <% unless current_user.store.present? %>
       <%= render "layouts/shared/stripe_form" %>
@@ -15,11 +19,16 @@
         <%= render "layouts/shared/stripe_form" %>
       <% end %>
     <% end %>
-   <p class="desc"><%= @app.description %></p>
     </div>
   </div>
-<div class="container-column">
-  <div class="image-container">
+    <div class="container-column">
+    <div>
+   <h3>About <%= @app.name %></h3>
+   <p class="desc"><%= @app.description %></p>
+    </div>
+  
+  <div class="image-container-top m-2">
+    <h3>App Screenshots</h3>
     <% @app.images.each do |image| %>
     <%= image_tag(image, :size =>"180x260") %>
     <% end %>
