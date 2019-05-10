@@ -159,7 +159,7 @@ We do daily stand ups to discuss what we did the previous day, what we’ll be d
 To build App Space, the team (Ruth and Praveen) employed Git SCM and GitHub. Both team members used branches named after themselves and changes to code were committed to their respective branches. After a conclusion of a day, the team discusses the changes and the respective team member creates a pull request to merge into the master branch which is then integrated by Praveen. To ensure that little confusion occurs with merges, only 1 pull request is merged into master at a time in a clear, chronological order. 
 
 Git Workflow
-![Git Workflow](/docs/Git-Workflow.jpg "Git Workflow")
+![Git Workflow](/docs/git-workflow.jpg "Git Workflow")
 
 # Q20.Provide an overview and description of your Testing process.
 
