@@ -8,8 +8,12 @@
     <h1><%= @app.name %> <span>by <%= @app.store.name %></span></h1>
     <h2><%= @app.blurb %></h2>
     <h2><%= number_to_currency(@app.price) %></h2>
-    <% unless current_user.store.apps.include?(@app)  %>
-    <%= render "layouts/shared/stripe_form" %>
+    <% unless current_user.store.present? %>
+      <%= render "layouts/shared/stripe_form" %>
+    <% else %>
+      <% unless current_user.store.apps.include?(@app) %>
+        <%= render "layouts/shared/stripe_form" %>
+      <% end %>
     <% end %>
    <p class="desc"><%= @app.description %></p>
     </div>
@@ -22,7 +26,6 @@
   </div>
   <div class="container">
     <% if @app.store.user == current_user %>
-    
     <%= link_to 'Edit Listing', edit_app_path(@app.id), :class => "btn btn-primary float-left"  %>
     <%= link_to 'Delete Listing', app_path(@app.id), :method => :delete, :class => "btn btn-danger float-right", :data => { confirm: "Are you sure?" } %>
     <% end %>
