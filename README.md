@@ -57,7 +57,8 @@ Ruby on Rails 5.2.3 employs an ORM (Object Relational Mapping) to provide an abs
 
 An excellent depiction of the MVC architectural pattern is displayed below illustrating its clear separation of concerns and its full SSR methodology (Server Side Rendered Pages).
 
-< insert image of MVC > 
+MVC Diagram
+![MVC Diagram](/docs/diagram-for-mvc.jpeg "MVC Diagram")
 
 # Q9.Explain the different high-level components (abstractions) in your App.
 
@@ -124,17 +125,30 @@ end
 ````
 # Q14.Provide your database schema design.
 
-< insert image of ### The ERD > 
+ERD
+![ERD](/docs/application-store-erd.jpeg "ERD")
 
 # Q15.Provide User stories for your App.
 
-< insert image of figma user stories and one/two sentences >
+The user has to signup before they have any privileges on the web app. Once they login, they can chose to buy an app. The can view the listings page, click onto an app to get more details on that app, and click Get App when they choose to buy. A stripe window will ask them for their credit card details and they will be brought to a confirmation page where they can download the app. Alternatively they can register a store (become a seller), they can create a listing where it will then display on the app listings page.
+
+User Stories
+![User Stories](/docs/Figma:User.png "User Stories")
 
 # Q16.Provide Wireframes for your App.
+
+Figma Wireframes
+![Figma Wireframes](/docs/Figma:User.png "Figma Wireframes")
 
 # Q17.Describe the way tasks are allocated and tracked in your project.
 
 We’ve set up a Trello board where we manage our work and check it regularly and allocate accordingly. We use the Trello board to display our work ‘to do’, work that we’re ‘doing’ and work that has been ‘done.
+Trello
+![Trello Screenshot 1](/docs/Trello-1.png "Trello Screenshot 1")
+
+![Trello Screenshot 2](/docs/Trello-2.png "Trello Screenshot 2")
+
+![Trello Screenshot 3](/docs/Trello-3.png "Trello Screenshot 3")
 
 # Q18.Discuss how Agile methodology is being implemented in your project.
 
@@ -144,7 +158,8 @@ We do daily stand ups to discuss what we did the previous day, what we’ll be d
 
 To build App Space, the team (Ruth and Praveen) employed Git SCM and GitHub. Both team members used branches named after themselves and changes to code were committed to their respective branches. After a conclusion of a day, the team discusses the changes and the respective team member creates a pull request to merge into the master branch which is then integrated by Praveen. To ensure that little confusion occurs with merges, only 1 pull request is merged into master at a time in a clear, chronological order. 
 
-<<image><This is the visual representation the management of the use of Git SCM>>
+Git Workflow
+![Git Workflow](/docs/Git-Workflow.jpg "Git Workflow")
 
 # Q20.Provide an overview and description of your Testing process.
 
