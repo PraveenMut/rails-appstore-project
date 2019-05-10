@@ -1,3 +1,4 @@
+
 <div class="container-rows">
   <div class="image-container-top">
     <% if @app.icon.attached? %>
@@ -33,9 +34,9 @@
     <%= image_tag(image, :size =>"180x260") %>
     <% end %>
   </div>
-  <div class="container">
+  <div class="container p-3">
     <% if @app.store.user == current_user %>
-    <%= link_to 'Edit Listing', edit_app_path(@app.id), :class => "btn btn-primary float-left"  %>
-    <%= link_to 'Delete Listing', app_path(@app.id), :method => :delete, :class => "btn btn-danger float-right", :data => { confirm: "Are you sure?" } %>
+    <%= link_to 'Edit Listing', edit_app_path(@app.id), :class => "btn btn-primary float-center"  %>
+    <%= link_to 'Delete Listing', app_path(@app.id), :method => :delete, :class => "btn btn-danger float-center", :data => { confirm: "Are you sure?" } %>
     <% end %>
 </div>
