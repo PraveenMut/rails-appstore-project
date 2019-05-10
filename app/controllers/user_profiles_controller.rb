@@ -46,3 +46,4 @@ class UserProfilesController < ApplicationController
     params.permit(:first_name, :last_name, :street, :suburb, :postcode, :state, :country)
   end
 end
+
