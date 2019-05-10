@@ -1,13 +1,29 @@
-<div class="jumbotron text-center">
-    <h1>Welcome to the App Space</h1>
+<h1 class="text-center mb-4">Listings by <%= @store.name %></h1>
+  <div class="container">
+    <div class="row">
+      <div class="card-deck mb-3 text-center">
+        <% @apps.each do |app| %>
+        <div class="col-md-4 col-6">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <% if app.icon.attached? %>
+                <%= image_tag(app.icon, :size =>"80x80") %>
+              <% end %>
+            </div>
+            <div class="card-body">
+              <h4 class="my-0 font-weight-normal"><%= app.name %> by <%= app.store.name %></h4>
+              <h3 class="pricing-card-title"><%= number_to_currency(app.price) %></h3>
+              <ul class="list-unstyled mt-3 mb-4">
+                <%= app.blurb %>
+              </ul>
+            </div>
+            <div class="card-footer">
+                <%= link_to 'More Details', app_path(app.id), :class => "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>  
   </div>
-<% @apps.each do |app| %>
-<div>
-    <ul>
-    <li><%= app.name %></li>
-    <li><%= app.description %></li>
-    <li><%= app.price %></li>
-    <li> <%= link_to 'Show Listing', app_path(app.id) %> </li>
-    </ul>
-<% end %>
 </div>
