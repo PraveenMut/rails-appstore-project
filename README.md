@@ -5,7 +5,10 @@
 <p>Website: https://appstore-coderacademy.herokuapp.com/</p>
 <p>Git Repository link: https://github.com/PraveenMut/rails-appstore-project/</p>
 
-# Q1-4.What is the need (i.e. challenge) that you will be addressing in your project? Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving? Describe the project will you be conducting and how your App will address the needs.
+# Q1-4.What is the need (i.e. challenge) that you will be addressing in your project? 
+   ## Identify the problem you’re trying to solve by building this particular marketplace App? 
+   ## Why is it a problem that needs solving? 
+   ## Describe the project will you be conducting and how your App will address the needs.
 
 AppSpace aims to be the premier marketplace for independent developers to list their apps for sale and for buyers, being app consumers (a B2C structure) to seamlessly purchase applications.  Built an amazing application? List it on AppSpace.
 
@@ -16,6 +19,22 @@ Although the application marketplace paradigm is efficient for select ecosystems
 AppSpace aims takes inspiration of sources such as the Envato, Flippa Shopify App Store, the Google Play Store and the Apple App Store. 
 
 We hope that you enjoy the experience of AppStore and we strive to ensure that enriching your productivity to entertainment through our brilliant network of developers is always our main goal.
+
+# Instructions for accessing the project
+
+Due to the sensitive nature of API keys, all keys will be ommited. Please refer to the submitted document in executing the application in a local environment.
+
+- Unzip the file
+- Open your preferred text editor with the application's folder being the root folder
+- In the terminal with the application root being the parent working directory, enter `rails db:create`
+- Enter `rails db:migrate`
+- Run `rails s` to start the rails server defaulted to localhost:3000
+- The stripe payment gateway and S3 may not work due to the differing keys
+- Terminate the rails server by pressing CMD + C on a Mac
+- Replace the master key with the one given and save
+- Enter `EDITOR='code --wait' rails credentials:edit` and copy the secret key base with the one provided (alteratively use `EDITOR='\usr\bin\nano rails credentials:edit`
+- Save all files
+- Run `rails s` to restart server
 
 # Q4.Describe the network infrastructure:
 
@@ -191,6 +210,3 @@ Of course, this reduces the attack vector to the server itself. In order to defe
 # Q23.Research what your legal obligations are in relation to handling user data.
 
 Privacy Act 1988 all businesses and not for profit organisations have responsibilities to manage personal information securely. It regulates the collection, use and handling of personal information about individuals. When an individual requests access to and/or deletion of PII data that we are holding, we are required to respond to that request within 30 days, otherwise we could be in breach of privacy laws and potential fines.
-
-
-
