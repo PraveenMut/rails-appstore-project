@@ -6,9 +6,9 @@
 <p>Git Repository link: https://github.com/PraveenMut/rails-appstore-project/</p>
 
 # Q1-4.What is the need (i.e. challenge) that you will be addressing in your project? 
-   ## Identify the problem you’re trying to solve by building this particular marketplace App? 
-   ## Why is it a problem that needs solving? 
-   ## Describe the project will you be conducting and how your App will address the needs.
+   - Identify the problem you’re trying to solve by building this particular marketplace App? 
+   - Why is it a problem that needs solving? 
+   - Describe the project will you be conducting and how your App will address the needs.
 
 AppSpace aims to be the premier marketplace for independent developers to list their apps for sale and for buyers, being app consumers (a B2C structure) to seamlessly purchase applications.  Built an amazing application? List it on AppSpace.
 
