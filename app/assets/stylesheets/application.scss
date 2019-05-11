@@ -23,15 +23,17 @@ body {
   font-family: 'Open Sans', sans-serif;
   min-height: 100vh;
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 6.5rem;
 }
 
 #footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 50px;
-} 
+  height: 55px;
+  margin-top: 3.5rem;
+  background: slategray;
+}
 
 h1 {
   font-family: 'Merriweather', sans-serif;

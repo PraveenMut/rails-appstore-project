@@ -22,9 +22,9 @@
           </li>
           <li class="nav-item active">
             <% if user_signed_in? && !current_user.store.present? %>
-              <%= link_to 'Become a Seller', new_user_store_path(current_user.id), class: 'nav-link nav-link-size text-primary' %>
+              <b><%= link_to 'Become a Seller', new_user_store_path(current_user.id), class: 'nav-link nav-link-size text-primary' %></b>
             <% elsif user_signed_in? %>
-              <%= link_to 'Create A Listing', new_app_path, class: 'nav-link nav-link-size text-primary' %>
+              <b><%= link_to 'Create A Listing', new_app_path, class: 'nav-link nav-link-size text-primary' %></b>
             <% end %>
           </li>
           <li class="nav-item-active">
@@ -66,5 +66,4 @@
   </div>
   <%= render "layouts/shared/footer" %>
   </body>
-
 </html>
