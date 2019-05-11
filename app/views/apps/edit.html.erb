@@ -1,5 +1,12 @@
 <div class="con-med border border-primary rounded p-3">
 <h1 class="text-center mb-4">Edit a Listing</h1>
+  <% if @app.errors.any? %>
+    <% @app.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger" role="alert">
+        <%= message %>
+      </div>
+      <% end %>
+    <% end %>
 <%= form_for @app, url: {action: "update"} do |f| %>
   <div class="form-group">
     <%= f.label :name %>

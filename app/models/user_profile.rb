@@ -4,7 +4,7 @@ class UserProfile < ApplicationRecord
   validates :last_name, presence: true
   validates :street, presence: true
   validates :suburb, presence: true
-  validates :postcode, presence: true
+  validates :postcode, numericality: { only_integer: true, message: "Enter a valid postcode" }
   validates :state, presence: true
   validates :country, presence: true
 end

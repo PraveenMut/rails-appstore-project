@@ -1,12 +1,17 @@
 <div class="con-med border border-primary rounded p-3">
   <div class="text-center">
     <h1 class="text-center mb-4">Profile</h1>
+      <% if @user_profile.errors.any? %>
+          <% @user_profile.errors.full_messages.each do |message| %>
+            <div class="alert alert-danger" role="alert">
+              <%= message %>
+            </div>
+          <% end %>
+        <% end %>
   </div>
-<form action="<%= user_user_profiles_path %>" method="GET">
-<input type="hidden" value="<%= form_authenticity_token %>" name= "authenticity_token" />
 <div class="form-row">
   <div class="form-group col-md-6">
-    <%= form_for @user_profile, url: {action: "update"} do |f| %>
+    <%= form_for @user_profile, url: { action: "update" } do |f| %>
     <b><%= f.label :First_Name %></b>
     <%= f.text_field :first_name, class: 'form-control' %>
   </div>
@@ -37,7 +42,7 @@
     <b><%= f.label :Country %></b>
     <%= f.text_field :country, class: 'form-control' %>
   </div>
-  <%= f.submit 'Save Changes', class:'btn btn-primary' %>
+    <%= f.submit 'Save Changes', class:'btn btn-primary' %>
   <% end %>
  
   

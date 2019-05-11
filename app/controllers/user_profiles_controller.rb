@@ -32,8 +32,12 @@ class UserProfilesController < ApplicationController
   def update
     @user = current_user
     @user_profile = UserProfile.find(params[:id])
-    @user_profile.update(user_profile_params)
-    redirect_to user_user_profile_path(@user.id, @user_profile.id)
+    if @user_profile.update(user_profile_params)
+      flash[:user_profile_edit_success] = "Profile successfully edited"
+      redirect_to apps_path
+    else
+      render 'edit'
+    end
   end
 
   private

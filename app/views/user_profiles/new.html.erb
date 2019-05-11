@@ -2,6 +2,13 @@
     <div class="text-center">
     <h1 class="text-center mb-4">Profile</h1>
       <p>Please fill in profile details before continuing</p>
+           <% if @user_profile.errors.any? %>
+          <% @user_profile.errors.full_messages.each do |message| %>
+            <div class="alert alert-danger" role="alert">
+              <%= message %>
+            </div>
+          <% end %>
+        <% end %>
       <hr>
       </div>
       <form action="<%= user_user_profiles_path %>" method="POST">

@@ -31,8 +31,12 @@ class AppsController < ApplicationController
 
   def update
     @app = App.find(params[:id])
-    @app.update(app_params)
-    redirect_to app_path(@app.id)
+    if @app.update(app_params)
+      flash[:apps_edit_success] = "Application Entry sucessfully edited"
+      redirect_to app_path(@app.id)
+    else
+      render 'new'
+    end
 end
 
   def delete
