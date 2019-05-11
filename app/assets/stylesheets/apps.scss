@@ -71,3 +71,10 @@
   margin-top: 1px;
   margin: 25px;
 }
+
+.screenshots-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  overflow: scroll;
+}
