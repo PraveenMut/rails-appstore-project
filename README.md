@@ -38,9 +38,11 @@ Due to the sensitive nature of API keys, all keys will be ommited. Please refer 
 
 # Q4.Describe the network infrastructure:
 
-The AppSpace web application is deployed on Heroku's PaaS infrastructure through the heroku cli tools. through the Rails builder in Heroku build tools (due to the low traffic nature of the application, no explicit procfiles were declared and thus the default WEBRick web server is used). We ensured that all database issues and configuration intricacies have been staged, committed and tested throughly. 
+The AppSpace web application is deployed on Heroku's PaaS infrastructure through Heroku's cli tool. This is then built through the Rails builder in Heroku's build tools (due to the low traffic nature of the application, no explicit procfiles were declared and thus the default WEBRick web server is used). We ensured that all database issues and configuration intricacies have been staged, committed and tested throughly. 
 
-In regards to user uploaded images, AppSpace uses AWS's S3 service. Such images are stored through API calls to AWS through the AWS-S3-SDK gem made available to Rails developers. The reason for selecting AWS S3's vast infrastructure is mainly due to their impressive cost efficiency and brilliance in managing in such infrastructure. The developer merely only has to worry about provisioning of servers without any burden of managing them. Although Azure and GCP are viable competitors, due to the nature of our application, AWS's was our preferred choice. 
+The reason why Heroku was chosen compared to its closest competitors, such as DigitalOcean or EC2 was due to its ease of use in rapid deployment of Rails based applications. Other solutions require extensive initial configuration (such as using tools such as Capistrano and Ngnix to create a reverse proxy for resolution) which take valuable time away from developing a MVP prototype. 
+
+In regards to user uploaded images, AppSpace uses AWS's S3 service. Such images are stored through API calls to AWS through the AWS-S3-SDK gem made available to Rails developers. The reason for selecting AWS S3's vast infrastructure is mainly due to their impressive cost efficiency and brilliance in managing in such infrastructure. The developer merely only has to worry about provisioning of servers without any burden of managing them. Although Azure and GCP are viable competitors, due to the nature of our application, AWS was our preferred choice. 
 
 # Q5.Identify and describe the software to be used in your App. 
 
@@ -66,7 +68,7 @@ PostgreSQL is an Object-Relational Database Management System. It's possibl
 
 # Q7.Identify and describe the production database setup.
 
-The web application employs a traditional relational SQL database using the postgresql (aka postgres) RDBMS (Relational Database Management System). The reason this was used was to comply with Heroku's build systems which require postgres to be used for Rails type applications. Postgres is a thoroughly battle tested RDBMS with a rich open source community and thus makes it a great choice for robust web applications requiring many CRUD IOs.
+The web application employs a traditional relational SQL database using the postgresql (aka postgres) RDBMS (Relational Database Management System). The reason this was used was to comply with Heroku's build systems which require postgres to be used for Rails type applications. Postgres is a thoroughly battle tested RDBMS with a rich open source community and thus makes it a great choice for building robust web applications requiring many CRUD IOs.
 
 Although other DBMSes such as SQLite (Relational) and MongoDB/no-SQL are available to use in Ruby, as Heroku is not capable with SQLite and MongoDB requires extensive additional configuration, PostgreSQL was ultimately chosen to be the preferred choice for the production database. 
 
@@ -106,7 +108,7 @@ AppSpace aims to premier destination to allow developers to list their independe
 
 Generally speaking, the data structure involves retrieving items from stores of apps, and retrieving all applications and then allowing buyers to purchase such apps. However, to ensure a clean User Experience, when a user registers at App Store they are automatically defaulted to a Buyer and then consequently have the option to become a seller. 
 
-Therefore, in essence, the data structure involves retrieving objects from an array of objects in ApplicationRecords. 
+Therefore, in essence, the data structure involves retrieving objects from an array of objects in ApplicationRecord (the ORM which maps records as objects). 
 
 # Q12.Discuss the database relations to be implemented.
 
@@ -203,7 +205,7 @@ We store email addresses, PII (personally identifiable information), so there ar
 
 # Q22.Discuss methods you will use to protect information and data.
 
-AppSpace takes data confidentiality extremely seriously. We do not sell or monetize data to 3rd parties whatsoever. In addition, due to the MVC architecture of Rails, confidential data is abstracted away from the client side and moved to server side for full SSR. This ensures that sensitive user profile information is absent from the client side which substantially reduces vulnerabilities. 
+AppSpace takes data confidentiality extremely seriously. We do not sell or monetize data to 3rd parties whatsoever. In addition, due to the MVC architecture of Rails, confidential data is abstracted away from the client side and moved to server side for full SSR. This ensures that sensitive user profile information is absent from the client side which substantially reduces attack vectors. 
 
 Of course, this reduces the attack vector to the server itself. In order to defend against such attacks, all passwords and sensitive billing details (such as credit card details) are fully encrpted by salted bcrypt and SSL/TLS when communicating with Stripe. Therefore, if information were to be leaked through an attack on the server, all information is fully encrypted and requires the private keys that are only accessible through cracking Heroku's security (an improbable case).
 
