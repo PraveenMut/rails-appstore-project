@@ -83,4 +83,4 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
 gem 'cancancan'
 
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
